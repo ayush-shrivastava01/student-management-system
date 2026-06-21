@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+
+
+    <button id="menuBtn" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="container">
+
+        
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <h2>StudentMS</h2>
+            </div>
+
+            <ul>
+
+                <li class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    Dashboard
+                </li>
+
+                <li class="nav-link" data-section="students">
+                    <i class="fas fa-user-graduate"></i>
+                    Students
+                </li>
+
+                <li class="nav-link" data-section="attendance">
+                    <i class="fas fa-calendar-check"></i>
+                    Attendance
+                </li>
+
+                <li class="nav-link" data-section="reports">
+                    <i class="fas fa-chart-pie"></i>
+                    Reports
+                </li>
+
+                <li class="nav-link" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </li>
+
+            </ul>
+
+        </aside>
+
+
+        <main class="main-content">
+
+           
+
+            <header class="topbar">
+
+                <h2>Student Management System</h2>
+
+                <div class="top-right">
+
+                    <button id="themeBtn">
+                        🌙
+                    </button>
+
+                    <div class="profile">
+                        <i class="fas fa-user-circle"></i>
+                        Admin
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <section id="dashboard" class="section active-section">
+
+                <h2>Dashboard Overview</h2>
+
+                <div class="cards">
+
+                    <div class="card blue">
+                        <h3>Total Students</h3>
+                        <h1 id="totalStudents">0</h1>
+                    </div>
+
+                    <div class="card green">
+                        <h3>Present Today</h3>
+                        <h1 id="presentCount">0</h1>
+                    </div>
+
+                    <div class="card orange">
+                        <h3>Absent Today</h3>
+                        <h1 id="absentCount">0</h1>
+                    </div>
+
+                    <div class="card red">
+                        <h3>Attendance %</h3>
+                        <h1 id="attendancePercent">0%</h1>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="chart-box">
+
+                        <h3>Attendance Statistics</h3>
+
+                        <canvas id="attendanceChart"></canvas>
+
+                    </div>
+
+                    <div class="activity-box">
+
+                        <h3>Recent Activities</h3>
+
+                        <ul id="activityList">
+
+                            <li>System Started</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section id="students" class="section">
+
+                <h2>Student Management</h2>
+
+                <div class="student-form">
+
+                    <input type="text"
+                        id="studentName"
+                        placeholder="Student Name">
+
+                    <input type="text"
+                        id="studentRoll"
+                        placeholder="Roll Number">
+
+                    <input type="text"
+                        id="studentCourse"
+                        placeholder="Course">
+
+                    <input type="file"
+                        id="studentPhoto"
+                        accept="image/*">
+
+                    <button id="addStudentBtn">
+                        Add Student
+                    </button>
+
+                </div>
+
+                <div class="search-box">
+
+                    <input type="text"
+                        id="searchStudent"
+                        placeholder="Search Student">
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Photo</th>
+                                <th>Name</th>
+                                <th>Roll No</th>
+                                <th>Course</th>
+                                <th>Attendance</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="studentTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section id="attendance" class="section">
+
+                <h2>Attendance Management</h2>
+
+                <div id="attendanceContainer">
+
+                </div>
+
+            </section>
+
+
+            <section id="reports" class="section">
+
+                <h2>Reports</h2>
+
+                <div class="report-card">
+
+                    <h3>Attendance Summary</h3>
+
+                    <canvas id="reportChart"></canvas>
+
+                </div>
+
+            </section>
+
+
+            <section id="settings" class="section">
+
+                <h2>Settings</h2>
+
+                <div class="settings-card">
+
+                    <h3>Theme Settings</h3>
+
+                    <p>
+                        Use Dark Mode button in top bar.
+                    </p>
+
+                </div>
+
+                <div class="settings-card">
+
+                    <h3>Project Information</h3>
+
+                    <p>
+                        Student Management System
+                    </p>
+
+                    <p>
+                        Built using HTML, CSS & JavaScript
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
